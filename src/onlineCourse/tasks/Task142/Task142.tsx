@@ -1,15 +1,9 @@
 import React from 'react';
 import { InputText } from 'primereact/inputtext';
-import { Fieldset } from 'primereact/fieldset';
 
 import { Task } from '../../../components/Task/Task';
 import { ValidationIcon } from '../../../components/ValidationIcon/ValidationIcon';
 import { verifyNumber } from '../../../utils/verifyNumber';
-import { verifyInteger } from '../../../utils/verifyInteger';
-import { factorial } from '../../../utils/factorial';
-import { normalizeNumber } from '../../../utils/normalizeNumber';
-import { leftExprRegexp, parseExpression, rightExprRegexp } from '../../../utils/parseExpression';
-import isEqual from "lodash/isEqual";
 import {verifyString} from "../../../utils/vertifyString";
 
 interface Task142State {

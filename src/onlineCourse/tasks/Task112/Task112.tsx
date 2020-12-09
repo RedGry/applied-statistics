@@ -144,6 +144,8 @@ export class Task112 extends Task<Task112State> {
                     <InputText readOnly value="Нет" />
                 </div>
 
+                <br />
+
                 <div className="p-inputgroup">
                     <span className="p-inputgroup-addon">
                         <strong>Ответ для w{w}:</strong>
