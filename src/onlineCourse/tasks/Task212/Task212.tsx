@@ -170,11 +170,11 @@ export class Task212 extends Task<Task212State> {
             newMatrix[3] * Math.pow(newE[3], 2) -
             Math.pow(waiting_E, 2);
 
-        const matrix_row1_change = newChange1.reduce(function (sum){
-            return sum;
+        const matrix_row1_change = newChange1.reduce(function (sum, a){
+            return sum + a;
         });
-        const matrix_row2_change = newChange2.reduce(function (sum){
-            return sum;
+        const matrix_row2_change = newChange2.reduce(function (sum, a){
+            return sum + a;
         });
 
         const waiting_N =
@@ -199,22 +199,22 @@ export class Task212 extends Task<Task212State> {
             <>
                 <div className="p-inputgroup half-margin-bottom">
                     <span className="p-inputgroup-addon">
-                        <strong>Распределение для {e[0]} =</strong>
+                        <strong>P(&#958; = {e[0]}) =</strong>
                     </span>
                     <InputText readOnly value={newMatrix[0].toFixed(2)} />
 
                     <span className="p-inputgroup-addon">
-                        <strong>Распределение для {e[1]} =</strong>
+                        <strong>P(&#958; = {e[1]}) =</strong>
                     </span>
                     <InputText readOnly value={newMatrix[1].toFixed(2)} />
 
                     <span className="p-inputgroup-addon">
-                        <strong>Распределение для {e[2]} =</strong>
+                        <strong>P(&#958; = {e[2]} =</strong>
                     </span>
                     <InputText readOnly value={newMatrix[2].toFixed(2)} />
 
                     <span className="p-inputgroup-addon">
-                        <strong>Распределение для {e[3]} =</strong>
+                        <strong>P(&#958; = {e[3]}) =</strong>
                     </span>
                     <InputText readOnly value={newMatrix[3].toFixed(2)} />
                 </div>
@@ -226,7 +226,7 @@ export class Task212 extends Task<Task212State> {
                         <strong>Математическое ожидание случайной величины &#958;:</strong>
                     </span>
 
-                    <InputText readOnly value={waiting_E.toFixed(3)} />
+                    <InputText readOnly value={waiting_E} />
                 </div>
 
                 <div className="p-inputgroup">
@@ -234,23 +234,23 @@ export class Task212 extends Task<Task212State> {
                         <strong>Дисперсия случайной величины &#958;:</strong>
                     </span>
 
-                    <InputText readOnly value={dispersion_E.toFixed(3)} />
+                    <InputText readOnly value={dispersion_E} />
                 </div>
 
                 <br />
 
                 <div className="p-inputgroup">
                     <span className="p-inputgroup-addon">
-                        <strong>Распределение случайной величины &#951; = {n[0]}:</strong>
+                        <strong>P(&#951; = {n[0]}) =</strong>
                     </span>
 
-                    <InputText readOnly value={matrix_row1_change.toFixed(2)} />
+                    <InputText readOnly value={matrix_row1_change} />
 
                     <span className="p-inputgroup-addon">
-                        <strong>Распределение случайной величины &#951; = {n[1]}:</strong>
+                        <strong>P(&#951; = {n[1]}) =</strong>
                     </span>
 
-                    <InputText readOnly value={matrix_row2_change.toFixed(2)} />
+                    <InputText readOnly value={matrix_row2_change} />
                 </div>
 
                 <br />
@@ -260,7 +260,7 @@ export class Task212 extends Task<Task212State> {
                         <strong>Математическое ожидание случайной величины &#951;:</strong>
                     </span>
 
-                    <InputText readOnly value={waiting_N.toFixed(3)} />
+                    <InputText readOnly value={waiting_N} />
                 </div>
 
                 <div className="p-inputgroup">
@@ -268,7 +268,7 @@ export class Task212 extends Task<Task212State> {
                         <strong>Дисперсия случайной величины &#951;:</strong>
                     </span>
 
-                    <InputText readOnly value={dispersion_N.toFixed(3)} />
+                    <InputText readOnly value={dispersion_N} />
                 </div>
 
                 <br />
@@ -278,7 +278,7 @@ export class Task212 extends Task<Task212State> {
                         <strong>Ковариация cov(&#958;,&#951;) :</strong>
                     </span>
 
-                    <InputText readOnly value={cov_E_n.toFixed(3)} />
+                    <InputText readOnly value={cov_E_n} />
                 </div>
 
                 <div className="p-inputgroup">
@@ -286,7 +286,7 @@ export class Task212 extends Task<Task212State> {
                         <strong>Коэффициент корреляции p(&#958;,&#951;) :</strong>
                     </span>
 
-                    <InputText readOnly value={correction_p.toFixed(3)} />
+                    <InputText readOnly value={correction_p} />
                 </div>
             </>
         );

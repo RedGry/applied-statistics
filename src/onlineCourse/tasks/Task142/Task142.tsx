@@ -136,12 +136,14 @@ export class Task142 extends Task<Task142State> {
         let answerFirst, answerSecond;
 
 
-        if (status.trim() === "Орехи") {
-            answerFirst = (parseFloat(e[0]) * parseFloat(p[0])/10000 + parseFloat(e[1]) * parseFloat(p[1])/10000 + parseFloat(e[2]) * parseFloat(p[2])/10000).toFixed(3);;
-            answerSecond = (parseFloat(e[parseFloat(firma) - 1]) * parseFloat(p[parseFloat(firma) - 1]) / 10000 / parseFloat(answerFirst)).toFixed(3);
-        } else if (status.trim() === "Шоколад"){
-            answerFirst = (parseFloat(e[0]) * (100-parseFloat(p[0]))/10000 + parseFloat(e[1]) * (100-parseFloat(p[1]))/10000 + parseFloat(e[2]) * (100-parseFloat(p[2]))/10000).toFixed(3);;
-            answerSecond = (parseFloat(e[parseFloat(firma) - 1]) * (100-parseFloat(p[parseFloat(firma) - 1])) / 10000 / parseFloat(answerFirst)).toFixed(3);
+        if (status.trim().toLowerCase() === "орехи") {
+            answerFirst = (parseFloat(e[0]) * parseFloat(p[0])/10000 + parseFloat(e[1]) * parseFloat(p[1])/10000 + parseFloat(e[2]) * parseFloat(p[2])/10000);
+            answerSecond = (parseFloat(e[parseFloat(firma) - 1]) * parseFloat(p[parseFloat(firma) - 1]) / 10000 / answerFirst);
+        } else if (status.trim().toLowerCase() === "шоколад"){
+            answerFirst = (parseFloat(e[0]) * (100-parseFloat(p[0]))/10000 + parseFloat(e[1]) * (100-parseFloat(p[1]))/10000 + parseFloat(e[2]) * (100-parseFloat(p[2]))/10000);
+            answerSecond = (parseFloat(e[parseFloat(firma) - 1]) * (100-parseFloat(p[parseFloat(firma) - 1])) / 10000 / answerFirst);
+        } else {
+            return (<> Неверный параметр "Куплено мороженно с ..."</>);
         }
 
             return (
